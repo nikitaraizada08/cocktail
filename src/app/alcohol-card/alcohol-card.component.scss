@@ -1,0 +1,17 @@
+.drink-card {   
+    width: fit-content;
+    margin: 8px;
+    min-height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background: peachpuff;
+    box-shadow: 10px 10px black;
+
+    .drink-details {
+        .details {
+            .drink-name {
+                font-weight: 600;
+            }
+        }
+    }
+}

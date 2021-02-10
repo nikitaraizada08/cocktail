@@ -1,0 +1,15 @@
+.drinks-section {
+    padding: 30px;
+    
+.drinks-list {
+    display: flex;
+    flex-wrap: wrap;
+    .drinks-card {
+        cursor: pointer;
+    }
+ }
+}
+
+span {
+color: red;
+}

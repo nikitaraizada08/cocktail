@@ -1,0 +1,12 @@
+<section class="middle-section">
+    <h3>Your favorite drink here!</h3>
+    <div class="controls-wrapper">
+      <button class="find-food-btn" (click)="findAlcoholic()">Alcoholic</button>
+      <button class="find-food-btn" (click)="findNonAlcoholic()">Non Alcoholic</button>
+    </div>
+    <h3>You can also search your drink here by just typing the first letter!</h3>
+    <div class="controls-wrapper">
+      <input class="mt-1 ml-3 mb-1" type="text" [formControl]="firstLetter">
+      <button class="find-food-btn" (click)="search()">Search</button>
+    </div>
+  </section>

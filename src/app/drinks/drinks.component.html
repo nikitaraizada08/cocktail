@@ -1,0 +1,13 @@
+<section class="drinks-section">
+  <div *ngIf="drinks && drinks.length" class="drinks-page">
+    <h3 *ngIf="!isSearched; else searched">{{isAlcoholic ? 'Alocholic Drinks': 'Non Alcoholic'}}</h3>
+    <ng-template #searched>
+      <h3>You searched for drinks starting with first letter <span>{{searchedString | uppercase }}</span></h3>
+    </ng-template>
+    <div class="drinks-list">
+      <ng-container *ngFor="let drink of drinks">
+        <app-alcohol-card class="drinks-card" [drink]="drink" (click)="openDetails(rest)"></app-alcohol-card>
+      </ng-container>
+    </div>
+  </div>
+</section>

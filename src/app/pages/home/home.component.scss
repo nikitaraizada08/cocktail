@@ -1,0 +1,39 @@
+.middle-section {
+    height: 100%;
+    background-color: orange;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    .controls-wrapper {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    .location-input {
+        width: 60%;
+        border-bottom: 3px solid black;
+        padding: 10px;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        &:focus {
+            outline: none;
+        }
+    }
+    .find-food-btn { 
+        color: white;
+        padding: 7px 15px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 10px;
+        background: black;
+        border: none;
+
+    }
+}
+}
