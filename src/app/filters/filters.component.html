@@ -1,0 +1,7 @@
+    <div class="filter-wrapper container">
+        <div class="d-flex align-items-center flex-wrap tags" (click)="handleFilter($event)">
+            <ng-container *ngFor="let filter of allTags">
+                    <span [ngClass]="inputFilterText === filter ? 'selected-link': ''"  class="tag">{{filter}}</span>
+            </ng-container>
+        </div>
+    </div>

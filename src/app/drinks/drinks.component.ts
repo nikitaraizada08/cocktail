@@ -23,6 +23,10 @@ export class DrinksComponent implements OnInit {
 
   public searchedString: string;
 
+  public cloneOfDrinks: any;
+
+  public uniqueDrinks: any;
+
   constructor(private dataService: DataService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -73,6 +77,8 @@ export class DrinksComponent implements OnInit {
           .subscribe(
               (resp: any) => {
                   this.drinks = resp.drinks;
+                  this.cloneOfDrinks = this.drinks;
+                  this.uniqueDrinks = this.formUniqueDrinkList();
                   this.drinks.sort();
               },
               (error) => {
@@ -80,6 +86,25 @@ export class DrinksComponent implements OnInit {
               }
           );
     });
+  }
+
+  formUniqueDrinkList(): string[] {
+    const drinkSet: Set<string> = new Set();
+    this.drinks.forEach((drink: any) =>
+      drinkSet.add(drink.strAlcoholic.toLowerCase().trim())
+    );
+    return ['all', ...drinkSet];
+  }
+
+
+  handleFilterSelection(filterProperty: string): void {
+    if (filterProperty && filterProperty !== 'all') {
+       this.drinks = this.cloneOfDrinks.filter((drink) =>
+             drink.strAlcoholic.toLowerCase().trim() === filterProperty.toLowerCase().trim()
+       );
+    } else {
+      this.drinks = this.cloneOfDrinks;
+    }
   }
 
 }

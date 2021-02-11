@@ -4,9 +4,12 @@
     <ng-template #searched>
       <h3>You searched for drinks starting with first letter <span>{{searchedString | uppercase }}</span></h3>
     </ng-template>
+    <app-filters *ngIf="isSearched"
+     [filters]="uniqueDrinks" 
+     (selectedFilter)="handleFilterSelection($event)" ></app-filters>
     <div class="drinks-list">
       <ng-container *ngFor="let drink of drinks">
-        <app-alcohol-card class="drinks-card" [drink]="drink" (click)="openDetails(rest)"></app-alcohol-card>
+        <app-alcohol-card class="drinks-card" [drink]="drink" [isSearched]="isSearched" (click)="openDetails(rest)"></app-alcohol-card>
       </ng-container>
     </div>
   </div>

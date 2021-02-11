@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DrinksComponent,
     AlcoholCardComponent,
-    HomeComponent
+    HomeComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

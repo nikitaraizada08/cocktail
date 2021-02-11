@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AlcoholCardComponent implements OnInit {
   @Input() drink: any;
 
+  @Input() isSearched: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
